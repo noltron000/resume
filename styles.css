@@ -1,29 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+html {
+	/* web-page flourishes */
+	background-color: #06142D;
+}
+
+body {
+	/* web-page flourishes */
+	background-color: #06142D;;
+	background: url(code.jpg) no-repeat center center fixed;
+	background-size: cover;
+	backdrop-filter: blur(5px);
+
+	/* fit reesume in center */
+	display: flex;
+}
+
+#resume {
+	/* page dimensions */
+	box-sizing: border-box;
+	width: 8.5in;
+	height: 11in;
+	padding: 1in;
+
+	/* web-page flourishes */
+	box-shadow: #06142D 0 0 25px 25px;
+	background-color: white;
+	margin: auto;
+}
+
+/*
+** When the document prints, I want users to only get the resume.
+** The background flourishes are not necessary.
+** In fact they would use too much ink and mess up spacing.
+*/
+
 @media print {
-	body * {
+	html * {
+		/* hide everything */
 		visibility: hidden;
 	}
 
-	#print-content, #print-content * {
+	#resume, #resume * {
+		/* dont hide the resume & its contents */
 		visibility: visible;
 	}
 
-	#print-content {
-		border-style: none;
+	#resume {
+		/* remove stylistic web-page flourishes */
 		background-color: none;
+		box-shadow: transparent 0 0 0 0;
+
+		/* maximize the resume page */
 		position: absolute;
 		left: 0;
 		top: 0;
 	}
-}
-
-body {
-	background-color: gray;
-}
-
-#print-content {
-	border: 2px black solid;
-	background-color: white;
-	width: 8.5in;
-	height: 11in;
-	margin: auto;
 }
