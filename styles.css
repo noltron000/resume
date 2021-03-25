@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;900&family=Piazzolla&family=Vollkorn&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&display=swap');
 
 html {
 	/* web-page flourishes */
@@ -17,12 +18,24 @@ body {
 	display: flex;
 }
 
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
 #resume {
 	/* page dimensions */
 	box-sizing: border-box;
 	width: 8.5in;
 	height: 11in;
-	padding: 1in;
+	padding: 0.5in;
 
 	/* web-page flourishes */
 	box-shadow: #06142D 0 0 25px 25px;
@@ -31,13 +44,14 @@ body {
 
 	/* content assignments */
 	font-family: Vollkorn;
+	position: relative;
 	display: grid;
-	grid-template-columns: min-content auto min-content;
+	grid-template-columns: min-content auto;
 	grid-template-rows: min-content auto min-content;
 	grid-template-areas:
-		"header  header  contact"
-		"sidebar content content"
-		"footer  footer  footer"
+		"header  header"
+		"sidebar content"
+		"footer  footer"
 }
 
 /*
@@ -58,7 +72,7 @@ body {
 
 }
 
-#resume > header > h1 {
+#resume > header h1 {
 	/* font properties */
 	font-family: Oswald;
 	text-transform: uppercase;
@@ -67,7 +81,7 @@ body {
 	font-weight: 900;
 }
 
-#resume > header > p {
+#resume > header p {
 	/* font properties */
 	font-family: Raleway;
 	text-transform: uppercase;
@@ -77,8 +91,28 @@ body {
 }
 
 #resume > address {
-	/* grid */
-	grid-area: contact;
+	/* position */
+	position: absolute;
+	top: 0.5in;
+	right: 0.5in;
+
+	/* font properties */
+	font-size: 0.625rem;
+}
+
+#resume > address dl {
+	/* content assignments */
+	display: grid;
+	grid-template-columns: max-content auto;
+}
+
+#resume > address dl dt {
+	text-align: center;
+  grid-column-start: 1;
+}
+
+#resume > address dl dd {
+  grid-column-start: 2;
 }
 
 #resume > main {
