@@ -1,5 +1,5 @@
-# Markdown Resume
-This is my resume, written in markdown.
-See [`RESUME.md`][RESUME].
+# Resume
+[`RESUME.md`][RESUME] is the canonical source of resume content.
+`resume.html` is a separate HTML copy.
 
 [RESUME]: ./RESUME.md
