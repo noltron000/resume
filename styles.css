@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;900&family=Piazzolla&family=Vollkorn&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&display=swap');
+
+html {
+	/* web-page flourishes */
+	background-color: #06142D;
+}
+
+body {
+	/* web-page flourishes */
+	background-color: #06142D;;
+	background: url(code.jpg) no-repeat center center fixed;
+	background-size: cover;
+	backdrop-filter: blur(5px);
+
+	/* fit reesume in center */
+	display: flex;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+#resume {
+	/* page dimensions */
+	box-sizing: border-box;
+	width: 8.5in;
+	height: 11in;
+	padding: 0.5in;
+
+	/* web-page flourishes */
+	box-shadow: #06142D 0 0 25px 25px;
+	background-color: white;
+	margin: auto;
+
+	/* content assignments */
+	font-family: Vollkorn;
+	position: relative;
+	display: grid;
+	grid-template-columns: min-content auto;
+	grid-template-rows: min-content auto min-content;
+	grid-template-areas:
+		"header  header"
+		"sidebar content"
+		"footer  footer"
+}
+
+/*
+** This section focuses on formatting various components.
+** Each component is formatted as generally as possible.
+** Of course, many things are very specific, but I want
+** to avoid repeating myself wherever possible.
+*/
+
+#resume > header {
+	/* grid */
+	grid-area: header;
+
+	/* content arrangement */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+#resume > header h1 {
+	/* font properties */
+	font-family: Oswald;
+	text-transform: uppercase;
+	font-size: 3rem;
+	letter-spacing: 0.05em;
+	font-weight: 900;
+}
+
+#resume > header p {
+	/* font properties */
+	font-family: Raleway;
+	text-transform: uppercase;
+	font-size: 1.25rem;
+	letter-spacing: 0.15em;
+	font-weight: 300;
+}
+
+#resume > address {
+	/* position */
+	position: absolute;
+	top: 0.5in;
+	right: 0.5in;
+
+	/* font properties */
+	font-size: 0.625rem;
+}
+
+#resume > address dl {
+	/* content assignments */
+	display: grid;
+	grid-template-columns: max-content auto;
+}
+
+#resume > address dl dt {
+	text-align: center;
+  grid-column-start: 1;
+}
+
+#resume > address dl dd {
+  grid-column-start: 2;
+}
+
+#resume > main {
+	/* grid */
+	grid-area: content;
+}
+
+#resume > aside {
+	/* grid */
+	grid-area: sidebar;
+}
+
+#resume > footer {
+	/* grid */
+	grid-area: footer;
+}
+
+/*
+** When the document prints, I want users to only get the resume.
+** The background flourishes are not necessary.
+** In fact they would use too much ink and mess up spacing.
+*/
+
+@media print {
+	html * {
+		/* hide everything */
+		visibility: hidden;
+	}
+
+	#resume, #resume * {
+		/* dont hide the resume & its contents */
+		visibility: visible;
+	}
+
+	#resume {
+		/* remove stylistic web-page flourishes */
+		background-color: none;
+		box-shadow: transparent 0 0 0 0;
+
+		/* maximize the resume page */
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+}
